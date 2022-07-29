@@ -180,6 +180,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="categoryTextField" destination="VWg-Dc-ntD" id="Vyo-Ns-nP7"/>
                         <outlet property="confirmButton" destination="TAv-Jq-Vdh" id="Nhf-74-Y1S"/>
                         <outlet property="titleTextField" destination="Fba-3e-Hw8" id="t4w-Vl-Ozw"/>
                     </connections>
@@ -200,13 +201,14 @@
                     <connections>
                         <segue destination="XxH-NN-QOb" kind="relationship" relationship="viewControllers" id="1So-SW-94b"/>
                         <segue destination="LNK-rv-Re9" kind="relationship" relationship="viewControllers" id="OQP-mB-NUi"/>
+                        <segue destination="ih5-gO-JcP" kind="relationship" relationship="viewControllers" id="zYL-jS-Lg4"/>
                         <segue destination="zCC-N0-DA8" kind="relationship" relationship="viewControllers" id="U1J-SF-sa6"/>
                         <segue destination="QQg-EM-Pph" kind="relationship" relationship="viewControllers" id="Lao-bD-WwY"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uhn-uW-nkM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1677" y="-311"/>
+            <point key="canvasLocation" x="-2839" y="-427"/>
         </scene>
         <!--마이-->
         <scene sceneID="9oF-sL-4S6">
@@ -223,7 +225,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rEG-Kf-Kyb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-645" y="761"/>
+            <point key="canvasLocation" x="-604" y="828"/>
         </scene>
         <!--My Page View Controller-->
         <scene sceneID="6U9-8K-GHM">
@@ -317,7 +319,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ant-DE-eyY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="108.69565217391305" y="760.71428571428567"/>
+            <point key="canvasLocation" x="241" y="828"/>
         </scene>
         <!--좋아요-->
         <scene sceneID="jfW-09-Cxi">
@@ -532,6 +534,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="categoryLabel" destination="sd7-bg-lou" id="b9y-sI-dnd"/>
                         <outlet property="titleLabel" destination="OvP-wA-QaV" id="93E-LH-dWz"/>
                     </connections>
                 </viewController>
@@ -571,7 +574,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vW7-yQ-Hub" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1075" y="-1430"/>
+            <point key="canvasLocation" x="-604" y="-1430"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="2N6-bU-Th5">
@@ -596,7 +599,21 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="amr-YQ-OA8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-236" y="-1430"/>
+            <point key="canvasLocation" x="241" y="-1430"/>
+        </scene>
+        <!--추가하기-->
+        <scene sceneID="h0Z-dv-HcO">
+            <objects>
+                <navigationController id="ih5-gO-JcP" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="추가하기" image="plus" catalog="system" selectedImage="plus" id="Vg8-Bn-4CD"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="tpW-BP-9Z8">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wbu-sV-y2Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2839" y="465"/>
         </scene>
     </scenes>
     <resources>
@@ -606,6 +623,7 @@
         <image name="heart.fill" catalog="system" width="128" height="109"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <image name="puzzlepiece.extension" catalog="system" width="128" height="98"/>
         <image name="puzzlepiece.extension.fill" catalog="system" width="128" height="100"/>
         <image name="아인쒸.jpeg" width="730" height="911"/>

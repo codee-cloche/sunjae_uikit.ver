@@ -10,6 +10,7 @@ import UIKit
 class DiaryDetailViewController: UIViewController {
 
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var categoryLabel: UILabel!
     var starButton: UIBarButtonItem?
     
     var diary: Diary?
@@ -29,6 +30,8 @@ class DiaryDetailViewController: UIViewController {
     private func configureView() {
         guard let diary = self.diary else { return }
         self.titleLabel.text = diary.title
+        self.categoryLabel.text = diary.category
+        
         self.starButton = UIBarButtonItem(image: nil, style: .plain, target: self, action: #selector(tapStarButton))
         self.starButton?.image = diary.isStar ? UIImage(systemName: "heart.fill") : UIImage(systemName: "heart")
         self.starButton?.tintColor = .systemPink
@@ -85,6 +88,7 @@ class DiaryDetailViewController: UIViewController {
             self.starButton?.image = UIImage(systemName: "star.fill")
         }
         self.diary?.isStar = !isStar
+        
         NotificationCenter.default.post(
             name: NSNotification.Name("starDiary"),
             object: [

@@ -10,5 +10,6 @@ import Foundation
 struct Diary{
     var uuidString: String
     var title: String
+    var category: String
     var isStar: Bool
 }

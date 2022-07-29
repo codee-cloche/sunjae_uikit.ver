@@ -14,10 +14,10 @@ class ViewController: UIViewController {
     
     private var diaryList = [Diary]() {
         didSet {
+            // diary가 추가되거나 변경될때마다 호출
             self.saveDiaryList()
         }
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,22 +72,24 @@ class ViewController: UIViewController {
         self.collectionView.deleteItems(at: [IndexPath(row: index, section: 0)])
     }
     
+    // Receives diary inputs from WriteDiaryViewController
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
-        if let wireDiaryViewController = segue.destination as? WriteDiaryViewController{
-            wireDiaryViewController.delegate = self
+        if let writeDiaryViewController = segue.destination as? WriteDiaryViewController{
+            writeDiaryViewController.delegate = self
         }
     }
     
     private func saveDiaryList(){
-        let date = self.diaryList.map{
+        let data = self.diaryList.map{
             [
                 "uuidString": $0.uuidString,
                 "title": $0.title,
+                "category": $0.category,
                 "isStar": $0.isStar
             ]
         }
         let userDefaults = UserDefaults.standard
-        userDefaults.set(date, forKey: "diaryList")
+        userDefaults.set(data, forKey: "diaryList")
     }
     
     private func loadDiaryList() {
@@ -96,8 +98,9 @@ class ViewController: UIViewController {
         self.diaryList = data.compactMap {
             guard let uuidString = $0["uuidString"] as? String else { return nil}
             guard let title = $0["title"] as? String else { return nil }
+            guard let category = $0["category"] as? String else { return nil }
             guard let isStar = $0["isStar"] as? Bool else { return nil }
-            return Diary(uuidString: uuidString, title: title, isStar: isStar)
+            return Diary(uuidString: uuidString, title: title, category: category, isStar: isStar)
         }
     }
 }
